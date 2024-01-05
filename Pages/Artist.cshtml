@@ -1,0 +1,266 @@
+﻿@page
+@model Proiect.Pages.ArtistModel
+@{
+<style>
+        body {
+            background-color: #FFD9EB; /* Roz deschis */
+            color: #000000; /* Negru */
+            font-family: 'Gabriola', cursive;
+            
+        }
+
+        .jumbotron {
+            background-color: #FFD9EB; /* Roz deschis */
+        }
+
+        .featured-section {
+            background-color: #FFD9EB; /* Roz deschis */
+            padding: 30px;
+            text-align: center;
+        }
+
+            .featured-section h2 {
+                color: #000000; /* Negru */
+            }
+
+            .featured-section p {
+                color: #333333; /* Gri inchis */
+            }
+
+        .btn-primary {
+            background-color: #FF69B4; /* Roz aprins */
+            border-color: #FF69B4; /* Roz aprins */
+        }
+
+        .banner {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+            .banner img {
+                width: 100%;
+                max-height: 400px;
+            }
+
+        /* Adăugat stil pentru bara de navigare */
+        .sidebar {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #FF69B4; /* Roz aprins */
+            padding-top: 20px;
+            padding-left: 10px;
+        }
+
+            .sidebar a {
+                padding: 10px 8px 10px 16px;
+                text-decoration: none;
+                font-size: 18px;
+                color: white;
+                display: block;
+            }
+
+                .sidebar a:hover {
+                    background-color: #FFD9EB; /* Roz deschis la hover */
+                    color: black;
+                }
+</style>
+
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Discover our Makeup Artists and their Works</h1>
+    </div>
+    <div class="col-md-6 mx-auto text-center">
+        <div style="display: flex; justify-content: space-between;">
+    <div style="margin-right: 10px;">
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 mx-auto text-center">
+                <img src="/images/machiajzi.jpg" alt="Service Image" class="img-fluid" width="500" height="500">
+        </div>
+    </div>
+
+     <div class="row mt-4">
+        <div class="col-md-6 mx-auto text-center">
+            <h2>Machiaj de Zi</h2>
+            <p>Made by Draghici Amalia</p>
+            <p>Experience: 6 ani</p>
+            <p>Cost: 150 lei</p>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6 mx-auto text-center">
+            <a href="/Appointments/Create" class="btn btn-primary">Add an Appointment</a>
+        </div>
+    </div>
+</div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <img src="/images/machiajseara.jpg" alt="Service Image" class="img-fluid" width="500" height="500">
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6 mx-auto text-center">
+                <h2>Machiaj de Seara</h2>
+                <p>Made by Ana Maria</p>
+                <p>Experience: 10 ani</p>
+                <p>Cost: 200 lei</p>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6 mx-auto text-center">
+                <a href="/Appointments/Create" class="btn btn-primary">Add an Appointment</a>
+            </div>
+        </div>
+    </div>
+
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-6 mx-auto text-center">
+                        <img src="/images/machiajnunta.jpg" alt="Service Image" class="img-fluid" width="500" height="500">
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center">
+                        <h2>Machiaj de Nunta</h2>
+                        <p>Made by Dobre Mira</p>
+                        <p>Experience: 15 ani</p>
+                        <p>Cost: 300 lei</p>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center">
+                        <a href="/Appointments/Create" class="btn btn-primary">Add an Appointment</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-6 mx-auto text-center">
+                        <img src="/images/machiajtematic.jpg" alt="Service Image" class="img-fluid" width="500" height="500">
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center">
+                        <h2>Machiaj pentru Evenimente Tematice</h2>
+                        <p>Made by Pop Marina</p>
+                        <p>Experience: 8 ani</p>
+                        <p>Cost: 250 lei</p>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center">
+                        <a href="/Appointments/Create" class="btn btn-primary">Add an Appointment</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-6 mx-auto text-center">
+                        <img src="/images/machiajprofi.jpg" alt="Service Image" class="img-fluid" width="500" height="500">
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center">
+                        <h2>Machiaj pentru Fotografii Profesionale</h2>
+                        <p>Made by Achim Dora</p>
+                        <p>Experience: 4 ani</p>
+                        <p>Cost: 500 lei</p>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center">
+                        <a href="/Appointments/Create" class="btn btn-primary">Add an Appointment</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-6 mx-auto text-center">
+                        <img src="/images/machiajbanchet.jpg" alt="Service Image" class="img-fluid" width="500" height="500">
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center">
+                        <h2>Machiaj pentru Banchete sau Evenimente Corporate</h2>
+                        <p>Made by Alb Ioana</p>
+                        <p>Experience: 9 ani</p>
+                        <p>Cost: 180 lei</p>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center">
+                        <a href="/Appointments/Create" class="btn btn-primary">Add an Appointment</a>
+                    </div>
+                </div>
+            </div>
+
+             <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-6 mx-auto text-center">
+                        <img src="/images/consultanta.jpg" alt="Service Image" class="img-fluid" width="500" height="500">
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center">
+                        <h2>Consultanta Personalizata de Machiaj</h2>
+                        <p>Made by Ganait Alisia</p>
+                        <p>Experience: 12 ani</p>
+                        <p>Cost: 720 lei</p>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center">
+                        <a href="/Appointments/Create" class="btn btn-primary">Add an Appointment</a>
+                    </div>
+                </div>
+            </div>
+
+
+             <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-6 mx-auto text-center">
+                        <img src="/images/sesiune.jpg" alt="Service Image" class="img-fluid" width="500" height="500">
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center">
+                        <h2>Sesiune de Invatare a Tehnicii de Machiaj</h2>
+                        <p>Made by Mira Iulia</p>
+                        <p>Experience: 7 ani</p>
+                        <p>Cost: 1000 lei</p>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center">
+                        <a href="/Appointments/Create" class="btn btn-primary">Add an Appointment</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+ </div>
+}

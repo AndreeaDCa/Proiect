@@ -1,0 +1,85 @@
+﻿@page
+@model Proiect.Pages.Reviews.IndexModel
+@section Styles {
+    <style>
+        body {
+            background-color: #FADADD; /* Roz deschis pentru fundal */
+            font-family: Gabriola, sans-serif; /* Font Gabriola */
+        }
+
+        .btn-primary {
+            background-color: #FF6699; /* Roz puțin mai închis pentru butoane */
+            border-color: #FF6699;
+        }
+
+        /* Stiluri pentru tabelul cu programări */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #FF6699;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #FF6699;
+            color: black;
+        }
+    </style>
+}
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Review</h1>
+
+<p>
+    <a asp-page="Create">Add a review</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Review[0].Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Review[0].Comment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Review[0].CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Review[0].MakeupArtist)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Review) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MakeupArtist.FullName)
+            </td>
+            <td>
+               <!-- <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |-->
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

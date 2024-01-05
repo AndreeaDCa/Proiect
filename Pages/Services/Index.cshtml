@@ -1,0 +1,72 @@
+﻿@page
+@model Proiect.Pages.Services.IndexModel
+@section Styles {
+    <style>
+        body {
+            background-color: #FADADD; /* Roz deschis pentru fundal */
+            font-family: Gabriola, sans-serif; /* Font Gabriola */
+        }
+
+        .btn-primary {
+            background-color: #FF6699; /* Roz puțin mai închis pentru butoane */
+            border-color: #FF6699;
+        }
+
+        /* Stiluri pentru tabelul cu programări */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #FF6699;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #FF6699;
+            color: black;
+        }
+    </style>
+}
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Services</h1>
+
+<p>
+    <a asp-page="Create">Add a new service</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Service[0].ServiceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Service[0].Cost)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Service) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

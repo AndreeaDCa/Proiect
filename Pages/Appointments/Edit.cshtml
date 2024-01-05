@@ -1,0 +1,94 @@
+﻿@page
+@model Proiect.Pages.Appointments.EditModel
+@section Styles {
+    <style>
+        body {
+            background-color: #FADADD; /* Roz deschis pentru fundal */
+            font-family: Gabriola, sans-serif; /* Font Gabriola */
+        }
+
+        .btn-primary {
+            background-color: #FF6699; /* Roz puțin mai închis pentru butoane */
+            border-color: #FF6699;
+        }
+
+        /* Stiluri pentru tabelul cu programări */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #FF6699;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #FF6699;
+            color: black;
+        }
+    </style>
+}
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Appointment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Appointment.ID" />
+            
+            <div class="form-group">
+                <label asp-for="Appointment.MakeupArtistID" class="control-label"></label>
+                <select asp-for="Appointment.MakeupArtistID" class="form-control" asp-items="@(ViewData["MakeupArtistsSelectList"] as SelectList)"></select>
+                <span asp-validation-for="Appointment.MakeupArtistID" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Appointment.AppointmentDate" class="control-label"></label>
+                <input asp-for="Appointment.AppointmentDate" class="form-control" />
+                <span asp-validation-for="Appointment.AppointmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Appointment.FirstName" class="control-label"></label>
+                <input asp-for="Appointment.FirstName" class="form-control" />
+                <span asp-validation-for="Appointment.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Appointment.LastName" class="control-label"></label>
+                <input asp-for="Appointment.LastName" class="form-control" />
+                <span asp-validation-for="Appointment.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Appointment.Email" class="control-label"></label>
+                <input asp-for="Appointment.Email" class="form-control" />
+                <span asp-validation-for="Appointment.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Appointment.Phone" class="control-label"></label>
+                <input asp-for="Appointment.Phone" class="form-control" />
+                <span asp-validation-for="Appointment.Phone" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

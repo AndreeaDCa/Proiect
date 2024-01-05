@@ -1,0 +1,69 @@
+﻿@page
+@model Proiect.Pages.Services.CreateModel
+@section Styles {
+    <style>
+        body {
+            background-color: #FADADD; /* Roz deschis pentru fundal */
+            font-family: Gabriola, sans-serif; /* Font Gabriola */
+        }
+
+        .btn-primary {
+            background-color: #FF6699; /* Roz puțin mai închis pentru butoane */
+            border-color: #FF6699;
+        }
+
+        /* Stiluri pentru tabelul cu programări */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #FF6699;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #FF6699;
+            color: black;
+        }
+    </style>
+}
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Service</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Service.ServiceName" class="control-label"></label>
+                <input asp-for="Service.ServiceName" class="form-control" />
+                <span asp-validation-for="Service.ServiceName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Service.Cost" class="control-label"></label>
+                <input asp-for="Service.Cost" class="form-control" />
+                <span asp-validation-for="Service.Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

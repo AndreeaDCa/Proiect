@@ -1,0 +1,52 @@
+﻿@page
+@model LogoutModel
+@section Styles {
+    <style>
+        body {
+            background-color: #FADADD; /* Roz deschis pentru fundal */
+            font-family: Gabriola, sans-serif; /* Font Gabriola */
+        }
+
+        .btn-primary {
+            background-color: #FF6699; /* Roz puțin mai închis pentru butoane */
+            border-color: #FF6699;
+        }
+
+        /* Stiluri pentru tabelul cu programări */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #FF6699;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #FF6699;
+            color: black;
+        }
+    </style>
+}
+@{
+    ViewData["Title"] = "Log out";
+}
+
+<header>
+    <h1>@ViewData["Title"]</h1>
+    @{
+        if (User.Identity?.IsAuthenticated ?? false)
+        {
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                <button type="submit" class="nav-link btn btn-link text-dark">Click here to Logout</button>
+            </form>
+        }
+        else
+        {
+            <p>You have successfully logged out of the application.</p>
+        }
+    }
+</header>

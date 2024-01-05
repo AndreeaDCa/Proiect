@@ -1,0 +1,111 @@
+﻿@page
+@model Proiect.Pages.Appointments.IndexModel
+
+@section Styles {
+    <style>
+        body {
+            background-color: #FADADD; /* Roz deschis pentru fundal */
+            font-family: Gabriola, sans-serif; /* Font Gabriola */
+        }
+
+        .btn-primary {
+            background-color: #FF6699; /* Roz puțin mai închis pentru butoane */
+            border-color: #FF6699;
+        }
+
+        /* Stiluri pentru tabelul cu programări */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #FF6699;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #FF6699;
+            color: black;
+        }
+    </style>
+}
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Appointments</h1>
+
+<p>
+    <a asp-page="Create">Create an appointment</a>
+</p>
+<div class="col-md-6">
+
+<form method="get">
+    <div class="form-group">
+        <label for="searchString">Search an appointment by your firstname or lastname:</label>
+            <div class="col-md-3">
+        <input type="text" id="searchString" name="SearchString" value="@Model.SearchString" class="form-control" />
+            </div>
+        </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointments[0].MakeupArtist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointments[0].AppointmentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointments[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointments[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointments[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointments[0].Phone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Appointments)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MakeupArtist.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

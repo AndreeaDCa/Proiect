@@ -1,0 +1,111 @@
+﻿@page
+@model Proiect.Pages.TutorialModel
+@{
+
+<style>
+    body {
+        background-color: #FFD9EB; /* Roz deschis */
+        color: #000000; /* Negru */
+        font-family: 'Gabriola', cursive;
+    }
+
+    .jumbotron {
+        background-color: #FFD9EB; /* Roz deschis */
+    }
+
+    .featured-section {
+        background-color: #FFD9EB; /* Roz deschis */
+        padding: 30px;
+        text-align: center;
+    }
+
+        .featured-section h2 {
+            color: #000000; /* Negru */
+        }
+
+        .featured-section p {
+            color: #333333; /* Gri inchis */
+        }
+
+    .btn-primary {
+        background-color: #FF69B4; /* Roz aprins */
+        border-color: #FF69B4; /* Roz aprins */
+    }
+
+    .banner {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+        .banner img {
+            width: 100%;
+            max-height: 400px;
+        }
+
+    /* Adăugat stil pentru bara de navigare */
+    .sidebar {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #FF69B4; /* Roz aprins */
+        padding-top: 20px;
+        padding-left: 10px;
+    }
+
+        .sidebar a {
+            padding: 10px 8px 10px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+
+            .sidebar a:hover {
+                background-color: #FFD9EB; /* Roz deschis la hover */
+                color: black;
+            }
+</style>
+
+<div class="jumbotron text-center">
+    <h1 class="display-4">Discover Amazing Makeup Tutorials</h1>
+    <p>Explore step-by-step tutorials from professional makeup artists to enhance your beauty.</p>
+</div>
+
+    <div class="container">
+        <div class="row flex-column">
+            <div class="col-md-6 mx-auto text-center">
+                <h2>For Beginners</h2>
+                <p>Start your makeup journey with these easy tutorials designed for beginners.</p>
+
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/IYgCo9OV8ZU?si=TK9VFgXdV_Z_WEeu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/F2px1SvHIIM?si=muOp2GDvS9iEkTOO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="col-md-6 mx-auto text-center">
+                <h2>Intermediate Level</h2>
+                <p>Take your skills to the next level with tutorials suitable for intermediate makeup enthusiasts.</p>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zS3d3A_lcUc?si=8oQ__IJpsCbzhNjh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/bbUy7QOE-38?si=vXzakpxn3m_6zFNI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="col-md-6 mx-auto text-center">
+                <h2>Advanced Techniques</h2>
+                <p>Master advanced makeup techniques with tutorials crafted for experienced makeup artists.</p>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/IIg1MlvkiuQ?si=M6FLjJmI63w0hhpS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nf8ySuesAPg?si=OuuEer8ajbx5tCM-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+}
+

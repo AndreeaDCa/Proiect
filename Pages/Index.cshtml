@@ -1,10 +1,96 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Welcome to our Makeup Site";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    body {
+        background-color: #FFD9EB; /* Roz deschis */
+        color: #000000; /* Negru */
+        font-family: 'Gabriola', cursive;
+    }
+
+    .jumbotron {
+        background-color: #FFD9EB; /* Roz deschis */
+    }
+
+    .featured-section {
+        background-color: #FFD9EB; /* Roz deschis */
+        padding: 30px;
+        text-align: center;
+    }
+
+        .featured-section h2 {
+            color: #000000; /* Negru */
+        }
+
+        .featured-section p {
+            color: #333333; /* Gri inchis */
+        }
+
+    .btn-primary {
+        background-color: #FF69B4; /* Roz aprins */
+        border-color: #FF69B4; /* Roz aprins */
+    }
+
+    .banner {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+        .banner img {
+            width: 100%;
+            max-height: 400px;
+        }
+
+    /* Adăugat stil pentru bara de navigare */
+    .sidebar {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #FF69B4; /* Roz aprins */
+        padding-top: 20px;
+        padding-left: 10px;
+    }
+
+        .sidebar a {
+            padding: 10px 8px 10px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+
+            .sidebar a:hover {
+                background-color: #FFD9EB; /* Roz deschis la hover */
+                color: black;
+            }
+</style>
+
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to the World of Makeup</h1>
+    <p>Discover the art of makeup and enhance your beauty with our amazing products and tutorials.</p>
+</div>
+
+<div class="container featured-section">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Makeup Artists</h2>
+            <p>Explore our makeup artists and make the best choice for yourself.</p>
+            <a class="btn btn-primary" href="/Artist">View Artists</a>
+        </div>
+        <div class="col-md-6">
+            <h2>Makeup Tutorials</h2>
+            <p>Learn new makeup techniques with our step-by-step tutorials from professional makeup artists.</p>
+            <a class="btn btn-primary" href="/Tutorial">View Tutorials</a>
+        </div>
+    </div>
+</div>
+
+<div class="banner">
+    <img src="/images/cosmetic.jpg" alt="Makeup Banner" class="img-fluid">
 </div>
