@@ -47,7 +47,7 @@ namespace Proiect.Pages.Appointments
             if (existingAppointments.Any())
             {
                 // Există deja programări pentru același artist, la aceeași dată și oră
-                ModelState.AddModelError(string.Empty, "Nu se poate realiza această programare, alegeți altă dată și oră.");
+                ModelState.AddModelError(string.Empty, "Nu se poate realiza această programare, alegeți altă dată sau oră.");
                 ViewData["MakeupArtistID"] = new SelectList(_context.MakeupArtist, "ID", "FullName");
                 return Page();
             }
